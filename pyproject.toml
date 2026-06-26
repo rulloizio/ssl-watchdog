@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ssl-watchdog"
+version = "1.0.0"
+description = "CLI tool to monitor domain health (SSL certificate and WHOIS data)"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Patrizio Fanelli", email = "patrizio.fanelli@gmail.com"}
+]
+keywords = ["ssl", "whois", "monitoring", "domain", "certificate"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Italian",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: System :: Networking",
+    "Topic :: Internet :: Name Service (DNS)",
+]
+dependencies = [
+    "python-whois>=0.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/rulloizio/ssl-watchdog"
+Documentation = "https://github.com/rulloizio/ssl-watchdog#readme"
+Repository = "https://github.com/rulloizio/ssl-watchdog"
+Issues = "https://github.com/rulloizio/ssl-watchdog/issues"
+
+[project.scripts]
+ssl-watchdog = "ssl_watchdog.main:cli_entrypoint"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages]
+find = {where = ["src"]}
